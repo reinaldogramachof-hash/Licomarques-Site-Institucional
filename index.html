@@ -1,0 +1,1978 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Licomarques - 35 Anos Construindo Sonhos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --vermelho: #C62828;
+            --vermelho-claro: #EF5350;
+            --azul: #1565C0;
+            --azul-claro: #42A5F5;
+            --azul-bg: #E3F2FD;
+            --dourado: #FFA000;
+            --cinza-escuro: #263238;
+            --cinza-medio: #546E7A;
+            --cinza-claro: #ECEFF1;
+            --branco: #FFFFFF;
+            --preto: #212121;
+            --sombra: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --sombra-destaque: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: var(--branco);
+            color: var(--cinza-escuro);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .destaque {
+            color: var(--vermelho);
+        }
+
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--vermelho), var(--vermelho-claro));
+            color: var(--branco);
+            padding: 14px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.4s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(198, 40, 40, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(198, 40, 40, 0.4);
+        }
+
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: 0.5s;
+        }
+
+        .btn:hover::after {
+            left: 100%;
+        }
+
+        .btn-azul {
+            background: linear-gradient(135deg, var(--azul), var(--azul-claro));
+            box-shadow: 0 5px 15px rgba(21, 101, 192, 0.3);
+        }
+
+        .btn-azul:hover {
+            box-shadow: 0 10px 25px rgba(21, 101, 192, 0.4);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--branco);
+            box-shadow: var(--sombra);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.4s ease;
+        }
+
+        header.scrolled {
+            padding: 5px 0;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            transition: all 0.4s ease;
+        }
+
+        header.scrolled .header-container {
+            padding: 10px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-img {
+            height: 60px;
+            width: auto;
+            max-width: 180px;
+            object-fit: contain;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo .tagline {
+            font-size: 1rem;
+            color: var(--vermelho);
+            font-weight: 700;
+            margin-left: 10px;
+            border-left: 2px solid var(--azul);
+            padding-left: 15px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--cinza-escuro);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: linear-gradient(to right, var(--vermelho), var(--azul));
+            transition: width 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--vermelho);
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--cinza-escuro);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('lmhero.jpg') no-repeat center center/cover;
+            color: var(--branco);
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            animation: zoom 30s infinite alternate ease-in-out;
+        }
+
+        @keyframes zoom {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="%231565C0" opacity="0.1"/></svg>');
+            background-size: cover;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        .hero h2 {
+            font-size: 3.2rem;
+            margin-bottom: 25px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 40px;
+            max-width: 600px;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+            line-height: 1.6;
+        }
+
+        .destaque-hero {
+            color: var(--dourado);
+            font-weight: 700;
+        }
+
+        .contador-experiencia {
+            display: flex;
+            margin-top: 50px;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .contador-item {
+            text-align: center;
+            flex: 1;
+            min-width: 120px;
+        }
+
+        .contador-numero {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--dourado);
+            display: block;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        .contador-texto {
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 8px;
+        }
+
+        /* Diferenciais */
+        .diferenciais {
+            padding: 100px 0;
+            background-color: var(--branco);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 70px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--cinza-escuro);
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(to right, var(--vermelho), var(--azul));
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            max-width: 700px;
+            margin: 20px auto 0;
+            color: var(--cinza-medio);
+            font-size: 1.1rem;
+        }
+
+        .diferenciais-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .diferencial-card {
+            background-color: var(--branco);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--sombra);
+            transition: all 0.4s ease;
+            position: relative;
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        .diferencial-card:hover {
+            transform: translateY(-15px);
+            box-shadow: var(--sombra-destaque);
+        }
+
+        .diferencial-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--vermelho), var(--azul));
+        }
+
+        .diferencial-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--azul-bg), var(--branco));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 2rem;
+            color: var(--azul);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .diferencial-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--cinza-escuro);
+        }
+
+        .diferencial-card p {
+            color: var(--cinza-medio);
+        }
+
+        /* Serviços */
+        .servicos {
+            padding: 100px 0;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400"><rect width="400" height="400" fill="%23f5f5f5"/><path d="M0,0 L400,400 M400,0 L0,400" stroke="%239e9e9e" stroke-width="2"/><path d="M200,0 L200,400 M0,200 L400,200" stroke="%239e9e9e" stroke-width="2"/><path d="M100,0 L100,400 M300,0 L300,400 M0,100 L400,100 M0,300 L400,300" stroke="%23bdbdbd" stroke-width="1"/></svg>');
+            position: relative;
+        }
+
+        .servicos::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.85);
+        }
+
+        .servicos .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .servicos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .servico-card {
+            background-color: var(--branco);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--sombra);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .servico-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--sombra-destaque);
+        }
+
+        .servico-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--vermelho), var(--azul));
+        }
+
+        .servico-icon {
+            background: linear-gradient(135deg, var(--azul), var(--azul-claro));
+            padding: 30px;
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--branco);
+        }
+
+        .servico-content {
+            padding: 30px;
+        }
+
+        .servico-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--cinza-escuro);
+        }
+
+        .servico-content p {
+            color: var(--cinza-medio);
+            margin-bottom: 20px;
+        }
+
+        .servico-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--azul);
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .servico-link i {
+            margin-left: 8px;
+            transition: transform 0.3s;
+        }
+
+        .servico-link:hover {
+            color: var(--vermelho);
+        }
+
+        .servico-link:hover i {
+            transform: translateX(5px);
+        }
+
+        /* Jornada */
+        .jornada {
+            padding: 100px 0;
+            background-color: var(--branco);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .jornada::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: repeating-linear-gradient(
+                to bottom,
+                transparent,
+                transparent 20px,
+                var(--azul) 20px,
+                var(--azul) 40px
+            );
+            opacity: 0.3;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background: linear-gradient(to bottom, var(--vermelho), var(--azul));
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+            border-radius: 3px;
+        }
+
+        .timeline-item {
+            padding: 20px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+            transition: all 0.4s ease;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+
+        .timeline-content {
+            padding: 30px;
+            background-color: var(--branco);
+            border-radius: 12px;
+            box-shadow: var(--sombra);
+            position: relative;
+            transition: all 0.4s ease;
+        }
+
+        .timeline-item:hover .timeline-content {
+            transform: scale(1.05);
+            box-shadow: var(--sombra-destaque);
+            border-left: 4px solid var(--vermelho);
+        }
+
+        .timeline-content::after {
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            right: -12px;
+            background-color: var(--branco);
+            top: 30px;
+            border-radius: 50%;
+            z-index: 1;
+            border: 4px solid var(--azul);
+            box-shadow: 0 0 0 4px var(--branco);
+        }
+
+        .timeline-item:nth-child(even) .timeline-content::after {
+            left: -12px;
+        }
+
+        .timeline-year {
+            font-weight: bold;
+            color: var(--vermelho);
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            display: inline-block;
+            padding: 5px 15px;
+            background-color: var(--azul-bg);
+            border-radius: 20px;
+        }
+
+        .timeline-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--cinza-escuro);
+        }
+
+        /* Simulador */
+        .simulador {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--cinza-escuro), var(--preto));
+            color: var(--branco);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .simulador::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+            animation: float 15s infinite linear;
+        }
+
+        @keyframes float {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .simulador .section-title h2 {
+            color: var(--branco);
+        }
+
+        .simulador .section-title h2::after {
+            background: linear-gradient(to right, var(--dourado), var(--vermelho-claro));
+        }
+
+        .simulador-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px;
+            align-items: flex-start;
+            position: relative;
+            z-index: 1;
+        }
+
+        .simulador-form {
+            flex: 1;
+            min-width: 350px;
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: var(--branco);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            font-size: 1rem;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--branco);
+            transition: all 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--azul-claro);
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+
+        /* Estilização personalizada para o select */
+        .form-group select {
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 15px center;
+            background-size: 15px;
+            cursor: pointer;
+        }
+
+        .form-group select option {
+            background-color: var(--cinza-escuro);
+            color: var(--branco);
+            padding: 10px;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .resultado {
+            flex: 1;
+            min-width: 350px;
+            background: linear-gradient(135deg, var(--azul), var(--azul-claro));
+            color: var(--branco);
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(21, 101, 192, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .resultado::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 70%);
+        }
+
+        .resultado-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .resultado h3 {
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+        }
+
+        .valor-orcamento {
+            font-size: 3rem;
+            font-weight: 700;
+            margin: 25px 0;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .detalhes-orcamento {
+            text-align: left;
+            margin-top: 30px;
+            background-color: rgba(255, 255, 255, 0.15);
+            padding: 20px;
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+        }
+
+        .detalhes-orcamento h4 {
+            margin-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            padding-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .detalhes-orcamento ul {
+            list-style-type: none;
+        }
+
+        .detalhes-orcamento li {
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .destaque-orcamento {
+            background: linear-gradient(135deg, var(--dourado), var(--vermelho-claro));
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: 0 5px 15px rgba(255, 160, 0, 0.3);
+        }
+
+        /* Depoimentos */
+        .depoimentos {
+            padding: 100px 0;
+            background-color: var(--branco);
+            overflow: hidden;
+        }
+
+        .carrossel {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .carrossel-container {
+            display: flex;
+            transition: transform 0.5s ease;
+            animation: carrosselAuto 40s infinite linear;
+        }
+
+        .carrossel:hover .carrossel-container {
+            animation-play-state: paused;
+        }
+
+        @keyframes carrosselAuto {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-150%);
+            }
+        }
+
+        .depoimento-card {
+            min-width: 33.333%;
+            padding: 40px 30px;
+            background-color: var(--branco);
+            border-radius: 12px;
+            box-shadow: var(--sombra);
+            text-align: center;
+            transition: all 0.4s ease;
+            margin: 0 15px;
+            position: relative;
+        }
+
+        .carrossel:hover .depoimento-card {
+            transform: scale(0.95);
+            opacity: 0.7;
+        }
+
+        .carrossel .depoimento-card:hover {
+            transform: scale(1.05);
+            opacity: 1;
+            box-shadow: var(--sombra-destaque);
+        }
+
+        .depoimento-card::before {
+            content: """;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 4rem;
+            color: var(--azul-bg);
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+
+        .depoimento-texto {
+            font-style: italic;
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+            color: var(--cinza-medio);
+            position: relative;
+            z-index: 1;
+        }
+
+        .depoimento-autor {
+            font-weight: 600;
+            color: var(--azul);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .depoimento-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--azul-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--azul);
+            font-weight: bold;
+        }
+
+        /* WhatsApp Flutuante */
+        .whatsapp-float {
+            position: fixed;
+            width: 70px;
+            height: 70px;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 35px;
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: pulse 2s infinite;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 20px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+
+        .whatsapp-float:hover {
+            background-color: #128C7E;
+            animation: none;
+            transform: scale(1.1);
+        }
+
+        .whatsapp-text {
+            position: absolute;
+            right: 80px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: var(--cinza-escuro);
+            color: var(--branco);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            white-space: nowrap;
+            opacity: 0;
+            transition: all 0.3s;
+            pointer-events: none;
+        }
+
+        .whatsapp-float:hover .whatsapp-text {
+            opacity: 1;
+            right: 85px;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            overflow-y: auto;
+        }
+
+        .modal-content {
+            background-color: var(--branco);
+            margin: 5% auto;
+            padding: 40px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 800px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: var(--cinza-medio);
+            transition: color 0.3s;
+        }
+
+        .close-modal:hover {
+            color: var(--vermelho);
+        }
+
+        .modal h2 {
+            color: var(--vermelho);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .modal h3 {
+            color: var(--azul);
+            margin: 25px 0 15px;
+            font-size: 1.4rem;
+        }
+
+        .modal p, .modal ul {
+            margin-bottom: 15px;
+            color: var(--cinza-medio);
+            line-height: 1.6;
+        }
+
+        .modal ul {
+            padding-left: 20px;
+        }
+
+        .modal li {
+            margin-bottom: 8px;
+        }
+
+        /* Selo de Segurança */
+        .selo-seguranca {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+            padding: 10px 15px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+
+        .selo-seguranca i {
+            color: var(--dourado);
+            font-size: 1.2rem;
+        }
+
+        /* Cookie Banner */
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--cinza-escuro);
+            color: var(--branco);
+            padding: 20px;
+            z-index: 1500;
+            box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.2);
+            display: none;
+        }
+
+        .cookie-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .cookie-text {
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        .cookie-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .cookie-btn {
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .cookie-btn.accept {
+            background-color: var(--azul);
+            color: var(--branco);
+        }
+
+        .cookie-btn.decline {
+            background-color: transparent;
+            color: var(--branco);
+            border: 1px solid var(--branco);
+        }
+
+        .cookie-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Rodapé */
+        footer {
+            background: linear-gradient(to right, var(--cinza-escuro), var(--preto));
+            color: var(--branco);
+            padding: 80px 0 20px;
+        }
+
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+
+        .footer-col {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            color: var(--branco);
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 3px;
+            background: linear-gradient(to right, var(--vermelho), var(--azul));
+            bottom: 0;
+            left: 0;
+            border-radius: 2px;
+        }
+
+        .footer-col p, .footer-col a {
+            color: #bbb;
+            margin-bottom: 12px;
+            display: block;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-col a:hover {
+            color: var(--azul-claro);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            background-color: rgba(255, 255, 255, 0.1);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background-color: var(--azul);
+            transform: translateY(-5px);
+        }
+
+        .footer-logo {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-logo-img {
+            height: 80px;
+            width: auto;
+            max-width: 220px;
+            object-fit: contain;
+            filter: brightness(0) invert(1);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        .desenvolvido-por {
+            margin-top: 10px;
+            font-size: 0.8rem;
+            color: #777;
+        }
+
+        /* Responsividade */
+        @media (max-width: 1100px) {
+            .hero h2 {
+                font-size: 2.8rem;
+            }
+            
+            .diferenciais-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .depoimento-card {
+                min-width: 50%;
+            }
+            
+            .carrossel-container {
+                animation: carrosselAutoTablet 40s infinite linear;
+            }
+            
+            @keyframes carrosselAutoTablet {
+                0% {
+                    transform: translateX(0);
+                }
+                100% {
+                    transform: translateX(-200%);
+                }
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background-color: var(--branco);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+                padding: 20px;
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .contador-experiencia {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .contador-numero {
+                font-size: 2.2rem;
+            }
+            
+            .diferenciais-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline::after {
+                left: 31px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+
+            .timeline-content::after {
+                left: -12px;
+            }
+            
+            .depoimento-card {
+                min-width: 100%;
+            }
+            
+            .carrossel-container {
+                animation: carrosselAutoMobile 40s infinite linear;
+            }
+            
+            @keyframes carrosselAutoMobile {
+                0% {
+                    transform: translateX(0);
+                }
+                100% {
+                    transform: translateX(-300%);
+                }
+            }
+
+            .whatsapp-float {
+                width: 60px;
+                height: 60px;
+                bottom: 20px;
+                right: 20px;
+                font-size: 30px;
+            }
+            
+            .cookie-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .cookie-text {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+            
+            .modal-content {
+                padding: 25px;
+                margin: 10% auto;
+            }
+            
+            .footer-logo-img {
+                height: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header id="header">
+        <div class="container header-container">
+            <div class="logo">
+                <img src="logoLM1.png" alt="Licomarques Construtor" class="logo-img">
+                <div class="tagline">35 anos construindo sonhos</div>
+            </div>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#diferenciais">Diferenciais</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#jornada">Nossa Jornada</a></li>
+                    <li><a href="#simulador">Orçamento</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Seção Hero -->
+    <section class="hero" id="inicio">
+        <div class="container hero-content">
+            <h2>Transformamos <span class="destaque-hero">Projetos</span> em <span class="destaque-hero">Realidade</span></h2>
+            <p>Com mais de <strong>35 anos de experiência</strong>, a Licomarques é referência em construção civil em <strong>São José dos Campos e região</strong>, unindo tradição, qualidade e inovação em cada obra.</p>
+            <a href="#simulador" class="btn">Solicite um Orçamento <i class="fas fa-arrow-right"></i></a>
+            
+            <div class="contador-experiencia">
+                <div class="contador-item">
+                    <span class="contador-numero">35+</span>
+                    <span class="contador-texto">Anos de Experiência</span>
+                </div>
+                <div class="contador-item">
+                    <span class="contador-numero">500+</span>
+                    <span class="contador-texto">Obras Entregues</span>
+                </div>
+                <div class="contador-item">
+                    <span class="contador-numero">98%</span>
+                    <span class="contador-texto">Clientes Satisfeitos</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Diferenciais -->
+    <section class="diferenciais" id="diferenciais">
+        <div class="container">
+            <div class="section-title">
+                <h2>Por que Escolher a Licomarques?</h2>
+                <p>Nossos diferenciais são destaques em cada etapa da sua obra, garantindo qualidade, segurança e satisfação.</p>
+            </div>
+            <div class="diferenciais-grid">
+                <div class="diferencial-card">
+                    <div class="diferencial-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Qualidade Comprovada</h3>
+                    <p>Mais de três décadas de experiência com centenas de obras entregues e clientes satisfeitos.</p>
+                </div>
+                <div class="diferencial-card">
+                    <div class="diferencial-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Compromisso com Prazos</h3>
+                    <p>Planejamento rigoroso e gestão eficiente para garantir a entrega no prazo combinado.</p>
+                </div>
+                <div class="diferencial-card">
+                    <div class="diferencial-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Segurança Garantida</h3>
+                    <p>Todas as obras seguem rigorosas normas de segurança e qualidade para sua tranquilidade.</p>
+                </div>
+                <div class="diferencial-card">
+                    <div class="diferencial-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Atendimento Personalizado</h3>
+                    <p>Equipe especializada oferece suporte completo do projeto à entrega da obra.</p>
+                </div>
+                <div class="diferencial-card">
+                    <div class="diferencial-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Sustentabilidade</h3>
+                    <p>Utilizamos práticas e materiais sustentáveis para minimizar o impacto ambiental.</p>
+                </div>
+                <div class="diferencial-card">
+                    <div class="diferencial-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h3>Excelência em Acabamentos</h3>
+                    <p>Detalhes impecáveis que fazem a diferença no resultado final da sua obra.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Serviços -->
+    <section class="servicos" id="servicos">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nossos Serviços</h2>
+                <p>Oferecemos soluções completas em construção civil, do projeto à entrega da obra pronta.</p>
+            </div>
+            <div class="servicos-grid">
+                <div class="servico-card">
+                    <div class="servico-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <div class="servico-content">
+                        <h3>Construção Residencial</h3>
+                        <p>Construção de casas, sobrados e reformas residenciais completas com qualidade e dentro do prazo.</p>
+                        <a href="#" class="servico-link">Saiba mais <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="servico-card">
+                    <div class="servico-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <div class="servico-content">
+                        <h3>Construção Comercial</h3>
+                        <p>Obras comerciais, reformas de lojas, escritórios e adequações para pequenos empreendedores.</p>
+                        <a href="#" class="servico-link">Saiba mais <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="servico-card">
+                    <div class="servico-icon">
+                        <i class="fas fa-paint-roller"></i>
+                    </div>
+                    <div class="servico-content">
+                        <h3>Reformas e Ampliações</h3>
+                        <p>Reformas completas, parciais e revitalização de ambientes residenciais e comerciais.</p>
+                        <a href="#" class="servico-link">Saiba mais <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="servico-card">
+                    <div class="servico-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <div class="servico-content">
+                        <h3>Acabamentos e Manutenção</h3>
+                        <p>Serviços de acabamento fino e manutenção predial para manter seu imóvel sempre em perfeito estado.</p>
+                        <a href="#" class="servico-link">Saiba mais <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="servico-card">
+                    <div class="servico-icon">
+                        <i class="fas fa-hard-hat"></i>
+                    </div>
+                    <div class="servico-content">
+                        <h3>Administração de Obras</h3>
+                        <p>Gestão completa de obras, desde o planejamento até a entrega, com acompanhamento técnico especializado.</p>
+                        <a href="#" class="servico-link">Saiba mais <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="servico-card">
+                    <div class="servico-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="servico-content">
+                        <h3>Automação Residencial</h3>
+                        <p>Sistemas inteligentes para sua casa: iluminação, segurança, climatização e entretenimento integrados.</p>
+                        <a href="#" class="servico-link">Saiba mais <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Nossa Jornada -->
+    <section class="jornada" id="jornada">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nossa Jornada</h2>
+                <p>Uma trajetória de mais de três décadas construindo sonhos e realizando projetos.</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">1988</div>
+                        <h3>Fundação e Origem</h3>
+                        <p>A Licomarques Construção civil foi fundada em 1988, na cidade de São José dos Campos (SP), por Osmar Marques codinome Lico, um profissional experiente na área de obras e reformas residenciais.</p>
+                        <p>No início, a estrutura era simples: um pequeno escritório montado na própria casa do fundador e uma equipe formada por apenas quatro profissionais.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">1990 - 2000</div>
+                        <h3>Crescimento e Evolução</h3>
+                        <p>Com o passar dos anos, a Licomarques ampliou sua atuação, passando de pequenas reformas para obras completas e administração de construções.</p>
+                        <p>O crescimento trouxe novos clientes, uma equipe técnica mais qualificada e a mudança para uma sede própria no bairro Jardim Torrão de Ouro.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">Atualmente</div>
+                        <h3>Atuação Atual</h3>
+                        <p>Atualmente, a Licomarques Construção oferece serviços de construção e reformas residenciais e comerciais, administração de obras, acabamentos e manutenção predial.</p>
+                        <p>A empresa atua principalmente em São José dos Campos e região do Vale do Paraíba, contando com uma equipe de cerca de 15 colaboradores diretos e indiretos.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">Futuro</div>
+                        <h3>Valores e Missão</h3>
+                        <p><strong>Missão:</strong> construir com qualidade e confiança, transformando projetos em realidades que gerem satisfação e valorização aos clientes.</p>
+                        <p><strong>Visão:</strong> consolidar-se como uma das principais referências em construção civil do Vale do Paraíba, expandindo para obras de médio e grande porte nos próximos anos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Simulador de Orçamento -->
+    <section class="simulador" id="simulador">
+        <div class="container">
+            <div class="section-title">
+                <h2>Simulador de Orçamento</h2>
+                <p>Faça uma estimativa detalhada do valor da sua obra e receba um orçamento preliminar em minutos</p>
+            </div>
+            <div class="simulador-container">
+                <div class="simulador-form">
+                    <form id="form-orcamento">
+                        <div class="form-group">
+                            <label for="metragem">Metragem Quadrada (m²)</label>
+                            <input type="number" id="metragem" min="1" value="100" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="tipo-construcao">Tipo de Construção</label>
+                            <select id="tipo-construcao" required>
+                                <option value="basico">Padrão Básico</option>
+                                <option value="medio" selected>Padrão Médio</option>
+                                <option value="alto">Alto Padrão</option>
+                                <option value="luxo">Padrão Luxo</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="tipo-servico">Tipo de Serviço</label>
+                            <select id="tipo-servico" required>
+                                <option value="construcao" selected>Construção Nova</option>
+                                <option value="reforma">Reforma Completa</option>
+                                <option value="acabamento">Acabamento</option>
+                                <option value="ampliacao">Ampliação</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="tipo-imovel">Tipo de Imóvel</label>
+                            <select id="tipo-imovel" required>
+                                <option value="casa" selected>Casa</option>
+                                <option value="apartamento">Apartamento</option>
+                                <option value="comercial">Comercial</option>
+                                <option value="sobrado">Sobrado</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="detalhes">Detalhes Adicionais (Opcional)</label>
+                            <textarea id="detalhes" placeholder="Descreva brevemente sua necessidade..."></textarea>
+                        </div>
+                        <button type="button" id="calcular" class="btn btn-azul">Calcular Orçamento <i class="fas fa-calculator"></i></button>
+                    </form>
+                </div>
+                <div class="resultado">
+                    <div class="resultado-content">
+                        <h3>Valor Estimado</h3>
+                        <p>Com base nas informações fornecidas, o valor aproximado para sua obra é:</p>
+                        <div class="valor-orcamento" id="valor-orcamento">R$ 0,00</div>
+                        
+                        <div class="detalhes-orcamento">
+                            <h4>Detalhamento do Orçamento</h4>
+                            <ul id="detalhes-lista">
+                                <li>Mão de obra: <span id="mao-obra">R$ 0,00</span></li>
+                                <li>Materiais: <span id="materiais">R$ 0,00</span></li>
+                                <li>Projeto: <span id="projeto">R$ 0,00</span></li>
+                                <li>Taxas e licenças: <span id="taxas">R$ 0,00</span></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="destaque-orcamento">
+                            <i class="fas fa-bolt"></i> ORÇAMENTO NO MESMO DIA!
+                        </div>
+                        
+                        <p style="margin-top: 20px;">Este valor é uma estimativa inicial. Entre em contato para um orçamento personalizado e detalhado.</p>
+                        <a href="https://wa.me/5512997680675?text=Olá! Gostaria de solicitar um orçamento personalizado." class="btn" style="background: var(--branco); color: var(--azul); margin-top: 25px;" target="_blank">Solicitar Orçamento Completo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Depoimentos -->
+    <section class="depoimentos">
+        <div class="container">
+            <div class="section-title">
+                <h2>O que Nossos Clientes Dizem</h2>
+                <p>Confira a opinião de quem já confiou seus projetos à Licomarques</p>
+            </div>
+            <div class="carrossel">
+                <div class="carrossel-container" id="carrossel-container">
+                    <div class="depoimento-card">
+                        <div class="depoimento-texto">
+                            "A Licomarques construiu minha casa e superou todas as expectativas. Profissionais competentes, pontuais e com ótimo custo-benefício. Recomendo!"
+                        </div>
+                        <div class="depoimento-autor">
+                            <div class="depoimento-avatar">MS</div>
+                            Maria Silva
+                        </div>
+                    </div>
+                    <div class="depoimento-card">
+                        <div class="depoimento-texto">
+                            "Fizemos uma reforma completa no nosso escritório com a Licomarques. O resultado ficou excelente e o prazo foi cumprido rigorosamente. Parabéns!"
+                        </div>
+                        <div class="depoimento-autor">
+                            <div class="depoimento-avatar">JS</div>
+                            João Santos
+                        </div>
+                    </div>
+                    <div class="depoimento-card">
+                        <div class="depoimento-texto">
+                            "Trabalho impecável! A equipe da Licomarques é muito profissional e o atendimento é personalizado. Já indicamos para vários amigos."
+                        </div>
+                        <div class="depoimento-autor">
+                            <div class="depoimento-avatar">AO</div>
+                            Ana Oliveira
+                        </div>
+                    </div>
+                    <div class="depoimento-card">
+                        <div class="depoimento-texto">
+                            "A automação residencial que instalaram transformou nossa casa. Tecnologia de ponta com um serviço excepcional. Nota 10!"
+                        </div>
+                        <div class="depoimento-autor">
+                            <div class="depoimento-avatar">CM</div>
+                            Carlos Mendes
+                        </div>
+                    </div>
+                    <div class="depoimento-card">
+                        <div class="depoimento-texto">
+                            "Reformamos nosso apartamento com a Licomarques e ficamos impressionados com a qualidade dos acabamentos. Super recomendo!"
+                        </div>
+                        <div class="depoimento-autor">
+                            <div class="depoimento-avatar">PR</div>
+                            Paula Rodrigues
+                        </div>
+                    </div>
+                    <div class="depoimento-card">
+                        <div class="depoimento-texto">
+                            "Atendimento diferenciado e comprometimento com o cliente. Fizeram toda a administração da nossa obra e foi tudo perfeito."
+                        </div>
+                        <div class="depoimento-autor">
+                            <div class="depoimento-avatar">RA</div>
+                            Roberto Alves
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Botão WhatsApp Flutuante -->
+    <a href="https://wa.me/5512997680675?text=Olá! Gostaria de mais informações sobre os serviços da Licomarques." class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+        <div class="whatsapp-text">Fale conosco</div>
+    </a>
+
+    <!-- Rodapé -->
+    <footer id="contato">
+        <div class="container">
+            <div class="footer-logo">
+                <img src="logoLM11.png" alt="Licomarques Construtor" class="footer-logo-img">
+            </div>
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>Licomarques</h3>
+                    <p>Construindo com qualidade e confiança desde 1988. Transformamos seus projetos em realidade com ética, compromisso e transparência.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                    <div class="selo-seguranca">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Site Seguro - Suas informações estão protegidas</span>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Contato</h3>
+                    <p><i class="fas fa-phone"></i> 12 99768-0675</p>
+                    <p><i class="fas fa-envelope"></i> contato@licomarques.com.br</p>
+                    <p><i class="fas fa-map-marker-alt"></i> São José dos Campos - SP</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Links Rápidos</h3>
+                    <a href="#inicio">Início</a>
+                    <a href="#diferenciais">Diferenciais</a>
+                    <a href="#servicos">Serviços</a>
+                    <a href="#jornada">Nossa Jornada</a>
+                    <a href="#simulador">Simulador de Orçamento</a>
+                </div>
+                <div class="footer-col">
+                    <h3>Informações</h3>
+                    <a href="#" id="open-termos">Termos de Uso</a>
+                    <a href="#" id="open-politica">Política de Privacidade</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Licomarques Construtor. Todos os direitos reservados.</p>
+                <p class="desenvolvido-por">Desenvolvido por Plena Informática</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal Termos de Uso -->
+    <div id="modal-termos" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" id="close-termos">&times;</span>
+            <h2>Termos de Uso</h2>
+            <p>Estes Termos de Uso regulam o uso do site da Licomarques Construtor. Ao acessar e utilizar este site, você concorda com estes termos.</p>
+            
+            <h3>1. Aceitação dos Termos</h3>
+            <p>Ao acessar e usar este site, você concorda em cumprir e estar vinculado a estes Termos de Uso. Se você não concordar com algum destes termos, não use este site.</p>
+            
+            <h3>2. Uso do Site</h3>
+            <p>Você concorda em usar o site apenas para fins legais e de maneira que não infrinja os direitos de terceiros.</p>
+            
+            <h3>3. Propriedade Intelectual</h3>
+            <p>Todo o conteúdo deste site, incluindo textos, gráficos, logotipos e imagens, é propriedade da Licomarques Construtor e está protegido por leis de direitos autorais.</p>
+            
+            <h3>4. Limitação de Responsabilidade</h3>
+            <p>A Licomarques Construtor não se responsabiliza por quaisquer danos diretos, indiretos ou consequenciais resultantes do uso ou incapacidade de uso deste site.</p>
+            
+            <h3>5. Alterações nos Termos</h3>
+            <p>Reservamo-nos o direito de modificar estes Termos de Uso a qualquer momento. As alterações entrarão em vigor imediatamente após sua publicação no site.</p>
+        </div>
+    </div>
+
+    <!-- Modal Política de Privacidade -->
+    <div id="modal-politica" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" id="close-politica">&times;</span>
+            <h2>Política de Privacidade</h2>
+            <p>Esta Política de Privacidade descreve como a Licomarques Construtor coleta, usa e protege suas informações pessoais.</p>
+            
+            <h3>1. Informações Coletadas</h3>
+            <p>Coletamos informações que você nos fornece voluntariamente através de formulários de contato, incluindo:</p>
+            <ul>
+                <li>Nome completo</li>
+                <li>Endereço de e-mail</li>
+                <li>Número de telefone</li>
+                <li>Informações sobre seu projeto</li>
+            </ul>
+            
+            <h3>2. Uso das Informações</h3>
+            <p>Utilizamos suas informações para:</p>
+            <ul>
+                <li>Responder suas solicitações de orçamento</li>
+                <li>Enviar informações sobre nossos serviços</li>
+                <li>Melhorar nossos serviços e comunicação</li>
+            </ul>
+            
+            <h3>3. Proteção de Dados</h3>
+            <p>Implementamos medidas de segurança para proteger suas informações contra acesso não autorizado, alteração ou destruição.</p>
+            
+            <h3>4. Compartilhamento de Informações</h3>
+            <p>Não vendemos, trocamos ou transferimos suas informações pessoais para terceiros, exceto quando necessário para prestar os serviços solicitados.</p>
+            
+            <h3>5. Seus Direitos</h3>
+            <p>Você tem o direito de acessar, corrigir ou excluir suas informações pessoais a qualquer momento.</p>
+        </div>
+    </div>
+
+    <!-- Cookie Banner -->
+    <div id="cookie-banner" class="cookie-banner">
+        <div class="cookie-content">
+            <div class="cookie-text">
+                <p>Este site utiliza cookies para melhorar sua experiência de navegação. Ao continuar navegando, você concorda com nossa <a href="#" id="cookie-politica-link" style="color: var(--azul-claro);">Política de Cookies</a>.</p>
+            </div>
+            <div class="cookie-buttons">
+                <button class="cookie-btn accept" id="accept-cookies">Aceitar</button>
+                <button class="cookie-btn decline" id="decline-cookies">Recusar</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Menu Mobile
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('show');
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Simulador de Orçamento Aprimorado
+        document.getElementById('calcular').addEventListener('click', function() {
+            const metragem = parseFloat(document.getElementById('metragem').value);
+            const tipoConstrucao = document.getElementById('tipo-construcao').value;
+            const tipoServico = document.getElementById('tipo-servico').value;
+            const tipoImovel = document.getElementById('tipo-imovel').value;
+            
+            // Valores base por m²
+            let valorBase = 0;
+            let percentualMaoObra = 0.35;
+            let percentualMateriais = 0.50;
+            let percentualProjeto = 0.10;
+            let percentualTaxas = 0.05;
+            
+            if (tipoConstrucao === 'basico') {
+                valorBase = 1200;
+            } else if (tipoConstrucao === 'medio') {
+                valorBase = 1800;
+            } else if (tipoConstrucao === 'alto') {
+                valorBase = 2500;
+            } else if (tipoConstrucao === 'luxo') {
+                valorBase = 3500;
+            }
+            
+            // Ajustes por tipo de serviço
+            if (tipoServico === 'reforma') {
+                valorBase *= 1.3; // Reformas costumam ser mais caras por m²
+                percentualMaoObra = 0.40;
+                percentualMateriais = 0.45;
+            } else if (tipoServico === 'acabamento') {
+                valorBase *= 0.9; // Apenas acabamentos são mais baratos
+                percentualMaoObra = 0.45;
+                percentualMateriais = 0.50;
+                percentualProjeto = 0.03;
+                percentualTaxas = 0.02;
+            } else if (tipoServico === 'ampliacao') {
+                valorBase *= 1.2; // Ampliações têm complexidade adicional
+            }
+            
+            // Ajustes por tipo de imóvel
+            if (tipoImovel === 'apartamento') {
+                valorBase *= 1.1; // Obras em apartamentos têm custos adicionais
+            } else if (tipoImovel === 'comercial') {
+                valorBase *= 1.15; // Obras comerciais podem ter exigências específicas
+            }
+            
+            const valorTotal = metragem * valorBase;
+            const maoObra = valorTotal * percentualMaoObra;
+            const materiais = valorTotal * percentualMateriais;
+            const projeto = valorTotal * percentualProjeto;
+            const taxas = valorTotal * percentualTaxas;
+            
+            // Formatar para moeda brasileira
+            const formatador = new Intl.NumberFormat('pt-BR', {
+                style: 'currency',
+                currency: 'BRL'
+            });
+            
+            document.getElementById('valor-orcamento').textContent = formatador.format(valorTotal);
+            document.getElementById('mao-obra').textContent = formatador.format(maoObra);
+            document.getElementById('materiais').textContent = formatador.format(materiais);
+            document.getElementById('projeto').textContent = formatador.format(projeto);
+            document.getElementById('taxas').textContent = formatador.format(taxas);
+        });
+
+        // Inicializar o simulador
+        document.getElementById('calcular').click();
+
+        // Modal functionality
+        const modalTermos = document.getElementById('modal-termos');
+        const modalPolitica = document.getElementById('modal-politica');
+        const openTermos = document.getElementById('open-termos');
+        const openPolitica = document.getElementById('open-politica');
+        const closeTermos = document.getElementById('close-termos');
+        const closePolitica = document.getElementById('close-politica');
+
+        openTermos.addEventListener('click', function(e) {
+            e.preventDefault();
+            modalTermos.style.display = 'block';
+        });
+
+        openPolitica.addEventListener('click', function(e) {
+            e.preventDefault();
+            modalPolitica.style.display = 'block';
+        });
+
+        closeTermos.addEventListener('click', function() {
+            modalTermos.style.display = 'none';
+        });
+
+        closePolitica.addEventListener('click', function() {
+            modalPolitica.style.display = 'none';
+        });
+
+        // Close modal when clicking outside
+        window.addEventListener('click', function(e) {
+            if (e.target === modalTermos) {
+                modalTermos.style.display = 'none';
+            }
+            if (e.target === modalPolitica) {
+                modalPolitica.style.display = 'none';
+            }
+        });
+
+        // Cookie Banner functionality
+        const cookieBanner = document.getElementById('cookie-banner');
+        const acceptCookies = document.getElementById('accept-cookies');
+        const declineCookies = document.getElementById('decline-cookies');
+        const cookiePoliticaLink = document.getElementById('cookie-politica-link');
+
+        // Show cookie banner if not accepted yet
+        if (!localStorage.getItem('cookiesAccepted')) {
+            setTimeout(() => {
+                cookieBanner.style.display = 'block';
+            }, 2000);
+        }
+
+        acceptCookies.addEventListener('click', function() {
+            localStorage.setItem('cookiesAccepted', 'true');
+            cookieBanner.style.display = 'none';
+        });
+
+        declineCookies.addEventListener('click', function() {
+            localStorage.setItem('cookiesAccepted', 'false');
+            cookieBanner.style.display = 'none';
+        });
+
+        cookiePoliticaLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            modalPolitica.style.display = 'block';
+            cookieBanner.style.display = 'none';
+        });
+
+        // Suavizar rolagem para âncoras
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Fechar menu mobile se estiver aberto
+                    document.querySelector('nav ul').classList.remove('show');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
