@@ -839,7 +839,7 @@
         }
 
         .depoimento-card::before {
-            content: """;
+            content: "“";
             position: absolute;
             top: 20px;
             left: 20px;
@@ -1231,6 +1231,8 @@
 
             .mobile-menu {
                 display: block;
+                font-size: 2rem;
+                padding: 8px;
             }
 
             .hero h2 {
@@ -1239,6 +1241,20 @@
             
             .hero p {
                 font-size: 1.1rem;
+            }
+
+            /* Hero: reduzir jank e melhorar leitura */
+            .hero {
+                height: auto;
+                min-height: 75vh;
+                padding: 90px 0 70px;
+                animation: none;
+            }
+
+            /* Navegação: ampliar área de toque */
+            nav ul li a {
+                font-size: 1.05rem;
+                padding: 10px 0;
             }
             
             .contador-experiencia {
@@ -1253,6 +1269,16 @@
             .diferenciais-grid {
                 grid-template-columns: 1fr;
             }
+
+            /* Títulos de seção: melhor escala em mobile */
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+
+            .section-title p {
+                font-size: 1rem;
+                margin-top: 15px;
+            }
             
             .timeline::after {
                 left: 31px;
@@ -1262,6 +1288,7 @@
                 width: 100%;
                 padding-left: 70px;
                 padding-right: 25px;
+                margin-bottom: 25px;
             }
 
             .timeline-item:nth-child(even) {
@@ -1270,6 +1297,18 @@
 
             .timeline-content::after {
                 left: -12px;
+            }
+
+            .timeline-content {
+                padding: 20px;
+            }
+            
+            .timeline-year {
+                font-size: 1.1rem;
+            }
+            
+            .timeline-content h3 {
+                font-size: 1.2rem;
             }
             
             .depoimento-card {
@@ -1314,6 +1353,34 @@
             
             .footer-logo-img {
                 height: 60px;
+            }
+
+            /* Serviços: empilhar cards */
+            .servicos-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .servico-content {
+                padding: 20px;
+            }
+
+            /* Simulador: coluna única, evitar overflow */
+            .simulador-container {
+                flex-direction: column;
+                gap: 25px;
+            }
+
+            .simulador-form,
+            .resultado {
+                min-width: 100%;
+                padding: 25px;
+            }
+
+            /* Inputs: evitar zoom em iOS e melhorar legibilidade */
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+                font-size: 16px;
             }
         }
     </style>
@@ -1504,32 +1571,44 @@
                     <div class="timeline-content">
                         <div class="timeline-year">1988</div>
                         <h3>Fundação e Origem</h3>
-                        <p>A Licomarques Construção civil foi fundada em 1988, na cidade de São José dos Campos (SP), por Osmar Marques codinome Lico, um profissional experiente na área de obras e reformas residenciais.</p>
-                        <p>No início, a estrutura era simples: um pequeno escritório montado na própria casa do fundador e uma equipe formada por apenas quatro profissionais.</p>
+                        <p>Fundada em 1988 por <strong>Osmar Marques ("Lico")</strong> em <strong>São José dos Campos (SP)</strong>, a Licomarques nasceu com um propósito claro: oferecer serviços com <strong>qualidade</strong>, <strong>confiança</strong> e <strong>preço justo</strong>.</p>
+                        <p>A estrutura inicial era enxuta: escritório na casa do fundador e uma equipe de <strong>quatro profissionais</strong>. Os primeiros serviços concentravam-se em <strong>reformas residenciais</strong> e <strong>pequenas construções</strong>, sempre com atenção aos detalhes.</p>
+                        <p>Mesmo diante da concorrência e do desafio de conquistar os primeiros clientes, o trabalho sério e o atendimento próximo fizeram a diferença. A <strong>indicação boca a boca</strong> consolidou a reputação e impulsionou os passos seguintes.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <div class="timeline-year">1990 - 2000</div>
                         <h3>Crescimento e Evolução</h3>
-                        <p>Com o passar dos anos, a Licomarques ampliou sua atuação, passando de pequenas reformas para obras completas e administração de construções.</p>
-                        <p>O crescimento trouxe novos clientes, uma equipe técnica mais qualificada e a mudança para uma sede própria no bairro Jardim Torrão de Ouro.</p>
+                        <p>A partir dos anos 90, a Licomarques evoluiu para <strong>obras completas</strong> e <strong>administração de construções</strong>, ampliando a capacidade técnica e o portfólio.</p>
+                        <p>A mudança para a <strong>sede própria no Jardim Torrão de Ouro</strong> marcou uma nova fase, acompanhada da <strong>modernização</strong>: adoção de <strong>materiais sustentáveis</strong> e <strong>softwares de gestão</strong> para planejar, acompanhar e entregar com precisão.</p>
+                        <p><strong>Marcos que nos orgulham:</strong> mais de <strong>100 obras</strong> entregues, <strong>parcerias</strong> com arquitetos e engenheiros, e reconhecimento por <strong>pontualidade</strong> e <strong>alta satisfação</strong> dos clientes.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <div class="timeline-year">Atualmente</div>
                         <h3>Atuação Atual</h3>
-                        <p>Atualmente, a Licomarques Construção oferece serviços de construção e reformas residenciais e comerciais, administração de obras, acabamentos e manutenção predial.</p>
-                        <p>A empresa atua principalmente em São José dos Campos e região do Vale do Paraíba, contando com uma equipe de cerca de 15 colaboradores diretos e indiretos.</p>
+                        <p>Hoje, atendemos famílias e pequenos empreendedores com um portfólio completo: <strong>construção e reformas residenciais/comerciais</strong>, <strong>administração de obras</strong>, <strong>acabamentos</strong> e <strong>manutenção predial</strong>, além de <strong>planejamento técnico</strong>.</p>
+                        <p>Nosso foco está em <strong>São José dos Campos</strong> e em todo o <strong>Vale do Paraíba</strong>, combinando <strong>tradição</strong>, <strong>atendimento próximo</strong>, <strong>qualidade</strong> e <strong>compromisso</strong> em cada projeto.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <div class="timeline-year">Futuro</div>
-                        <h3>Valores e Missão</h3>
-                        <p><strong>Missão:</strong> construir com qualidade e confiança, transformando projetos em realidades que gerem satisfação e valorização aos clientes.</p>
-                        <p><strong>Visão:</strong> consolidar-se como uma das principais referências em construção civil do Vale do Paraíba, expandindo para obras de médio e grande porte nos próximos anos.</p>
+                        <h3>Valores, Missão e Visão</h3>
+                        <p><strong>Missão:</strong> transformar projetos em realidades com <strong>qualidade</strong> e <strong>confiança</strong>, gerando tranquilidade e valorização para nossos clientes.</p>
+                        <p><strong>Valores:</strong> ética, compromisso, qualidade, respeito, transparência e inovação — princípios que orientam decisões e atitudes no dia a dia.</p>
+                        <p><strong>Visão:</strong> ser <strong>referência</strong> em construção civil no <strong>Vale do Paraíba</strong> e expandir para <strong>obras maiores</strong>, mantendo nossa essência e excelência.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">Legado</div>
+                        <h3>Identidade e Legado</h3>
+                        <p>Para o fundador, a Licomarques é o resultado de <strong>esforço</strong> e <strong>paixão pela construção</strong>. Para os clientes, é sinônimo de <strong>confiança</strong> e <strong>tranquilidade</strong>.</p>
+                        <p>Mantemos a <strong>essência familiar</strong>: atendimento direto, presença constante na obra e cuidado genuíno com cada etapa.</p>
+                        <p>Nossa história é feita de relações duradouras — como o cliente que <strong>confiou duas vezes</strong> na empresa para realizar seus sonhos, reafirmando o compromisso que nos move.</p>
                     </div>
                 </div>
             </div>
