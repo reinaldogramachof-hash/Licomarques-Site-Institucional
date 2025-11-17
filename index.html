@@ -1245,14 +1245,19 @@
         .footer-col p, .footer-col a {
             color: #bbb;
             margin-bottom: 12px;
-            display: block;
             text-decoration: none;
             transition: color 0.3s;
         }
+        .footer-col p { display: flex; align-items: center; gap: 8px; line-height: 1.5; }
+        .footer-col p i { color: inherit; font-size: 1rem; line-height: 1; display: inline-block; width: 20px; text-align: center; }
+        .footer-col a { display: inline; line-height: 1; }
+        .footer-col p a { display: inline-block; line-height: 1.5; vertical-align: middle; }
 
         .footer-col a:hover {
             color: var(--azul-claro);
         }
+        .footer-list { list-style: none; padding: 0; margin: 0; }
+        .footer-list li { margin-bottom: 10px; }
 
         .social-links {
             display: flex;
@@ -1956,7 +1961,7 @@
                                     <div class="det-item-left">
                                         <label>Automação Residencial</label>
                                     </div>
-                                    <a href="automacao.html" class="btn btn-small" style="background: var(--branco); color: var(--azul);" target="_blank" rel="noopener">Solicitar Automação</a>
+                                    <a href="automação.html" class="btn btn-small" style="background: var(--branco); color: var(--azul);" target="_blank" rel="noopener">Solicitar Automação</a>
                                 </div>
                                 <p id="issqn_nota_reforma" style="display:none; font-size: 0.9rem; color: var(--cinza-medio);">Para Reforma/Acabamento, ISSQN não se aplica (sem novo Habite-se).</p>
                             </div>
@@ -2021,27 +2026,31 @@
                 </div>
                 <div class="footer-col">
                     <h3>Contato</h3>
-                    <p><i class="fas fa-phone"></i> 12 99768-0675</p>
-                    <p><i class="fas fa-envelope"></i> contato@licomarques.com.br</p>
+                    <p><i class="fas fa-phone"></i> <a href="https://wa.me/5512997680675?text=Ol%C3%A1!%20Quero%20falar%20com%20um%20especialista." target="_blank" rel="noopener" aria-label="Abrir WhatsApp para 12 99768-0675">12 99768-0675</a></p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:contato@licomarques.com.br?subject=Contato%20-%20Site%20Licomarques" aria-label="Enviar email para contato@licomarques.com.br">contato@licomarques.com.br</a></p>
                     <p><i class="fas fa-map-marker-alt"></i> São José dos Campos - SP</p>
                 </div>
                 <div class="footer-col">
                     <h3>Links Rápidos</h3>
-                    <a href="#inicio">Início</a>
-                    <a href="#diferenciais">Diferenciais</a>
-                    <a href="#servicos">Serviços</a>
-                    <a href="#jornada">Nossa Jornada</a>
-                    <a href="#simulador">Simulador de Orçamento</a>
+                    <ul class="footer-list">
+                        <li><a href="#inicio">Início</a></li>
+                        <li><a href="#diferenciais">Diferenciais</a></li>
+                        <li><a href="#servicos">Serviços</a></li>
+                        <li><a href="#jornada">Nossa Jornada</a></li>
+                        <li><a href="#simulador">Simulador de Orçamento</a></li>
+                    </ul>
                 </div>
                 <div class="footer-col">
                     <h3>Informações</h3>
-                        <a href="#" id="open-termos">Termos de Uso</a>
-                        <a href="#" id="open-politica">Política de Privacidade</a>
+                    <ul class="footer-list">
+                        <li><a href="#" id="open-termos">Termos de Uso</a></li>
+                        <li><a href="#" id="open-politica">Política de Privacidade</a></li>
+                    </ul>
                 </div>
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2025 Licomarques Construtor. Todos os direitos reservados.</p>
-                <p class="desenvolvido-por">Desenvolvido por Plena Informática</p>
+                <p class="desenvolvido-por">Desenvolvido por <a href="https://www.plenainformatica.com.br" target="_blank" rel="noopener" style="text-decoration:none;color:inherit">Plena Informática</a></p>
             </div>
         </div>
     </footer>
