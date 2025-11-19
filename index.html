@@ -1532,6 +1532,21 @@
             .det-item-valor { margin-top: 6px; }
             .det-item .btn-small { margin-top: 6px; }
         }
+        /* Modal "Saiba mais" por serviço */
+        .service-modal { position: fixed; inset: 0; z-index: 1200; display: none; }
+        .service-modal.open { display: block; }
+        .service-modal .overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.55); backdrop-filter: blur(2px); }
+        .service-modal .box { position: relative; z-index: 1; max-width: 720px; margin: 6vh auto; background: var(--card-bg); border-radius: 18px; box-shadow: var(--sombra); overflow: hidden; border: 1px solid rgba(66,165,245,0.24); }
+        .service-modal .box-header { display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; background: linear-gradient(135deg, var(--azul), var(--azul-claro)); color: #fff; }
+        .service-modal .box-title { font-weight: 700; font-size: 1.1rem; }
+        .service-modal .close-btn { background: none; border: none; color: #fff; font-size: 1.4rem; cursor: pointer; }
+        .service-modal .box-body { padding: 20px; color: var(--preto); background: var(--branco); }
+        .service-modal .box-body p { color: var(--cinza-medio); line-height: 1.6; margin-bottom: 12px; }
+        .service-modal .actions { display: flex; flex-wrap: wrap; gap: 12px; padding: 18px 20px; border-top: 1px solid rgba(66,165,245,0.18); background: var(--branco); }
+        .service-modal .btn { display: inline-flex; align-items: center; gap: 10px; padding: 12px 18px; border-radius: 12px; text-decoration: none; font-weight: 600; }
+        .service-modal .btn.whatsapp { background: linear-gradient(#006caa, #00c3ff); color: #fff; }
+        .service-modal .btn.page { background: rgba(0,0,0,0.06); color: var(--preto); border: 1px solid rgba(66,165,245,0.22); }
+        @media (max-width: 600px) { .service-modal .box { margin: 4vh 14px; } }
     </style>
 </head>
 <body>
@@ -1665,7 +1680,7 @@
                     <div class="servico-content">
                         <h3>Construção Residencial</h3>
                         <p>Construção de casas, sobrados e reformas residenciais completas com qualidade e dentro do prazo.</p>
-                        <a href="https://wa.me/5512997680675?text=Olá! Quero saber mais sobre Construção Residencial." target="_blank" rel="noopener" class="servico-link">Saiba mais <i class="fas fa-arrow-right"></i></a>
+                        <a href="#" class="servico-link">Saiba mais <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
                 <div class="servico-card">
@@ -1675,7 +1690,7 @@
                     <div class="servico-content">
                         <h3>Construção Comercial</h3>
                         <p>Obras comerciais, reformas de lojas, escritórios e adequações para pequenos empreendedores.</p>
-                        <a href="https://wa.me/5512997680675?text=Olá! Quero saber mais sobre Construção Comercial." target="_blank" rel="noopener" class="servico-link">Saiba mais <i class="fas fa-arrow-right"></i></a>
+                        <a href="#" class="servico-link">Saiba mais <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
                 <div class="servico-card">
@@ -1685,7 +1700,7 @@
                     <div class="servico-content">
                         <h3>Reformas e Ampliações</h3>
                         <p>Reformas completas, parciais e revitalização de ambientes residenciais e comerciais.</p>
-                        <a href="https://wa.me/5512997680675?text=Olá! Quero saber mais sobre Reformas e Ampliações." target="_blank" rel="noopener" class="servico-link">Saiba mais <i class="fas fa-arrow-right"></i></a>
+                        <a href="#" class="servico-link">Saiba mais <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
                 <div class="servico-card">
@@ -1695,7 +1710,7 @@
                     <div class="servico-content">
                         <h3>Acabamentos e Manutenção</h3>
                         <p>Serviços de acabamento fino e manutenção predial para manter seu imóvel sempre em perfeito estado.</p>
-                        <a href="https://wa.me/5512997680675?text=Olá! Quero saber mais sobre Administração de Obras." target="_blank" rel="noopener" class="servico-link">Saiba mais <i class="fas fa-arrow-right"></i></a>
+                        <a href="#" class="servico-link">Saiba mais <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
                 <div class="servico-card">
@@ -1705,7 +1720,7 @@
                     <div class="servico-content">
                         <h3>Administração de Obras</h3>
                         <p>Gestão completa de obras, desde o planejamento até a entrega, com acompanhamento técnico especializado.</p>
-                        <a href="https://wa.me/5512997680675?text=Olá! Quero saber mais sobre Automação Residencial." target="_blank" rel="noopener" class="servico-link">Saiba mais <i class="fas fa-arrow-right"></i></a>
+                        <a href="#" class="servico-link">Saiba mais <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
                 <div class="servico-card">
@@ -1998,7 +2013,7 @@
     -->
 
     <!-- Botão WhatsApp Flutuante -->
-    <a href="https://wa.me/5512997680675?text=Olá! Gostaria de mais informações sobre os serviços da Licomarques." class="whatsapp-float" target="_blank" aria-label="Abrir conversa no WhatsApp" rel="noopener">
+    <a href="https://api.whatsapp.com/send?phone=5512997680675&text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20os%20servi%C3%A7os%20da%20Licomarques." class="whatsapp-float" target="_blank" aria-label="Abrir conversa no WhatsApp" rel="noopener">
         <i class="fab fa-whatsapp"></i>
         <div class="whatsapp-text">Fale conosco</div>
     </a>
@@ -2026,7 +2041,7 @@
                 </div>
                 <div class="footer-col">
                     <h3>Contato</h3>
-                    <p><i class="fas fa-phone"></i> <a href="https://wa.me/5512997680675?text=Ol%C3%A1!%20Quero%20falar%20com%20um%20especialista." target="_blank" rel="noopener" aria-label="Abrir WhatsApp para 12 99768-0675">12 99768-0675</a></p>
+                    <p><i class="fas fa-phone"></i> <a href="https://api.whatsapp.com/send?phone=5512997680675&text=Ol%C3%A1!%20Quero%20falar%20com%20um%20especialista." target="_blank" rel="noopener" aria-label="Abrir WhatsApp para 12 99768-0675">12 99768-0675</a></p>
                     <p><i class="fas fa-envelope"></i> <a href="mailto:contato@licomarques.com.br?subject=Contato%20-%20Site%20Licomarques" aria-label="Enviar email para contato@licomarques.com.br">contato@licomarques.com.br</a></p>
                     <p><i class="fas fa-map-marker-alt"></i> São José dos Campos - SP</p>
                 </div>
@@ -2055,6 +2070,22 @@
         </div>
     </footer>
 
+    <!-- Modal de detalhes dos serviços -->
+    <div class="service-modal" id="serviceModal" aria-hidden="true" role="dialog" aria-labelledby="serviceTitle">
+      <div class="overlay" id="serviceOverlay"></div>
+      <div class="box" role="document">
+        <div class="box-header">
+          <div class="box-title" id="serviceTitle">Serviço</div>
+          <button class="close-btn" id="serviceClose" aria-label="Fechar"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="box-body" id="serviceBody"></div>
+        <div class="actions">
+          <a href="#" class="btn whatsapp" id="serviceWhats" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i><span>Falar no WhatsApp</span></a>
+          <a href="#" class="btn page" id="servicePage" style="display:none"><i class="fas fa-arrow-right"></i><span>Ver página</span></a>
+        </div>
+      </div>
+    </div>
+
     <!-- Modal Termos de Uso -->
     <div id="modal-termos" class="modal" role="dialog" aria-modal="true" tabindex="-1">
         <div class="modal-content">
@@ -2076,7 +2107,7 @@
             
             <h3>5. Alterações nos Termos</h3>
             <p>Reservamo-nos o direito de modificar estes Termos de Uso a qualquer momento. As alterações entrarão em vigor imediatamente após sua publicação no site.</p>
-        </div>
+    </div>
     </div>
 
     <!-- Modal Política de Privacidade -->
@@ -2150,6 +2181,95 @@
             <p>Este simulador fornece uma estimativa robusta. O valor final será confirmado em um orçamento detalhado e personalizado.</p>
         </div>
     </div>
+
+    <script>
+    (function(){
+      const modal = document.getElementById('serviceModal');
+      const overlay = document.getElementById('serviceOverlay');
+      const closeBtn = document.getElementById('serviceClose');
+      const titleEl = document.getElementById('serviceTitle');
+      const bodyEl = document.getElementById('serviceBody');
+      const whatsEl = document.getElementById('serviceWhats');
+      const pageEl = document.getElementById('servicePage');
+
+      const phone = '5512997680675';
+      const baseMsg = 'Olá! Estou visitando o site da Licomarques e gostaria de mais informações sobre';
+
+      const texts = {
+        'Construção Residencial': 'Projetos e execução de casas e sobrados com foco em qualidade, prazo e orçamento transparente. Acompanhamento técnico e equipe especializada do início ao fim.',
+        'Construção Comercial': 'Obras e reformas para lojas e escritórios, com adequações funcionais e entrega ágil. Planejamento, execução e acabamento para valorizar seu negócio.',
+        'Reformas e Ampliações': 'Revitalização de ambientes e ampliações com planejamento cuidadoso, equipe experiente e materiais de qualidade para transformar seu espaço.',
+        'Acabamentos e Manutenção': 'Acabamento fino e manutenção predial para garantir estética, durabilidade e funcionamento perfeito do seu imóvel.',
+        'Administração de Obras': 'Gestão completa com controle de cronograma, custos e qualidade, garantindo transparência e eficiência até a entrega.',
+        'Automação Residencial': 'Iluminação, segurança, clima e entretenimento integrados com controle por voz e app, para uma experiência residencial inteligente.'
+      };
+
+      function openModal(service, pageHref){
+        titleEl.textContent = service;
+        bodyEl.innerHTML = '<p>'+ (texts[service]||'Serviço da Licomarques com atendimento especializado.') +'</p>';
+        const msg = baseMsg + ' ' + service + '.';
+        const url = 'https://api.whatsapp.com/send?phone='+phone+'&text='+encodeURIComponent(msg);
+        whatsEl.href = url;
+        if (pageHref){ pageEl.href = pageHref; pageEl.style.display = 'inline-flex'; } else { pageEl.style.display = 'none'; }
+        modal.classList.add('open');
+        modal.setAttribute('aria-hidden','false');
+        closeBtn && closeBtn.focus();
+      }
+
+      function closeModal(){
+        modal.classList.remove('open');
+        modal.setAttribute('aria-hidden','true');
+      }
+
+      function openWhatsUniversal(service, desc){
+        const msg = baseMsg + ' ' + service + (desc ? ': ' + desc : '') + '.';
+        const enc = encodeURIComponent(msg);
+        const ua = navigator.userAgent || '';
+        const isAndroid = /Android/i.test(ua);
+        const isIOS = /iPhone|iPad|iPod/i.test(ua);
+        if (isAndroid) {
+          const base = 'https://wa.me/' + phone + '?text=' + enc;
+          const fb = encodeURIComponent(base);
+          const intentStd = 'intent://send/?text=' + enc + '#Intent;scheme=whatsapp;package=com.whatsapp;S.browser_fallback_url=' + fb + ';end';
+          const intentBiz = 'intent://send/?text=' + enc + '#Intent;scheme=whatsapp;package=com.whatsapp.w4b;S.browser_fallback_url=' + fb + ';end';
+          window.location.href = intentStd;
+          setTimeout(function(){ window.location.href = intentBiz; }, 500);
+          setTimeout(function(){ window.location.href = 'whatsapp://send?phone=' + phone + '&text=' + enc; }, 1000);
+          setTimeout(function(){ window.location.href = base; }, 1500);
+          return;
+        }
+        if (isIOS) {
+          window.location.href = 'whatsapp://send?phone=' + phone + '&text=' + enc;
+          setTimeout(function(){ window.location.href = 'https://wa.me/' + phone + '?text=' + enc; }, 700);
+          return;
+        }
+        var w = window.open('https://web.whatsapp.com/send?phone=' + phone + '&text=' + enc + '&app_absent=0', '_blank', 'noopener,noreferrer');
+        if (!w) { window.location.assign('https://api.whatsapp.com/send?phone=' + phone + '&text=' + enc); }
+      }
+
+      document.querySelectorAll('.servico-card .servico-link').forEach(function(a){
+        a.addEventListener('click', function(e){
+          const card = a.closest('.servico-card');
+          const service = card && card.querySelector('h3') ? card.querySelector('h3').textContent.trim() : 'Serviço';
+          const descEl = card && card.querySelector('p');
+          const desc = descEl ? descEl.textContent.trim() : '';
+          const href = a.getAttribute('href') || '';
+          const isInternal = href && !href.startsWith('http');
+          const isAutomacao = service === 'Automação Residencial' || /automação\.html$/i.test(href);
+          if (isInternal && isAutomacao) {
+            window.location.assign(href);
+            return;
+          }
+          e.preventDefault();
+          openWhatsUniversal(service, desc);
+        });
+      });
+
+      overlay && overlay.addEventListener('click', closeModal);
+      closeBtn && closeBtn.addEventListener('click', closeModal);
+      document.addEventListener('keydown', function(ev){ if(ev.key==='Escape') closeModal(); });
+    })();
+    </script>
 
     <!-- Cookie Banner -->
     <div id="cookie-banner" class="cookie-banner">
@@ -2412,7 +2532,7 @@
                     `Serviço: ${tipoServico}\n` +
                     `Imóvel: ${tipoImovel}\n` +
                     `Total estimado: ${formatador.format(total)}`;
-                const url = `https://wa.me/5512997680675?text=${encodeURIComponent(texto)}`;
+                const url = `https://api.whatsapp.com/send?phone=5512997680675&text=${encodeURIComponent(texto)}`;
                 whatsappLink.href = url;
             }
         }
